@@ -20,4 +20,17 @@ output = list can not blank
 class Solution:
 
     def find_max_index(self, numbers: list) -> int | str:
-        pass
+        if not numbers:
+            return "list can not blank"
+
+        index = 0
+        for i in range(1, len(numbers)):
+            if numbers[i] > numbers[index]:
+                index = i
+        return index
+
+# if __name__ == "__main__":
+#     sol = Solution()
+#     print(sol.find_max_index([1,2,1,3,5,6,4]))     
+#     print(sol.find_max_index([])) 
+#     print(sol.find_max_index([7,7,7,7])) 
