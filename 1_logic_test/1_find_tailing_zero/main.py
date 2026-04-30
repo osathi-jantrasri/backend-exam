@@ -16,8 +16,24 @@ input = -10
 output = number can not be negative
 """
 
-
+# การหาตัวเลข 0 ที่อยู่หลังสุดของค่า factorial 
+# จะใช้หลักการนับจำนวนครั้งที่เลข 5 ปรากฏในจำนวนเพราะ 2*5 = 10
+# จะมีเลข 2 มากกว่าเลข 5 เสมอใน factorial ดังนั้นเราจะนับจำนวนเลข 5 = จำนวนเลข 0 ที่อยู่หลังสุดของค่า factorial
 class Solution:
 
     def find_tailing_zeroes(self, number: int) -> int | str:
-        pass
+        if number < 0:
+            return "number can not be negative"
+
+        count = 0
+        i = 5
+        while (number>=5):
+            number //= i
+            count += number
+        return count
+
+# if __name__ == "__main__":
+#     sol = Solution()
+#     print(sol.find_tailing_zeroes(7))     
+#     print(sol.find_tailing_zeroes(-10))  
+#     print(sol.find_tailing_zeroes(999999))
